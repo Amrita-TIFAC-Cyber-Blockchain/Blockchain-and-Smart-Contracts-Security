@@ -15,20 +15,20 @@ To understand, explore and detect Vulnerabilities in Smart Contracts
 ## Security Tools
 
 | Tool Name | Status  | Type |
-|-----------|---------|----------|
-| [Etheno](Etheno.md) | | | 
-| [Mythril](Mythril.md)) | | | 
-| [Mythx](Mythx.md) | | | 
-| [Oyente](Oyente.md) | | |
-| [Tenderly](Tenderly.md) | | |
-| [Manticore](Manticore.md) | | |
-| [Slither](Slither.md) | | |
-| [Piet](Piet.md) | | |
-| [Smart Check](SmartCheck.md) | | |
-| [Vertigo](Vertigo.md) | | |
-| [Solidity Visual Auditor](SolVisualAuditor.md) | | |
-| [Solgraph](Solgraph.md) | | |
-| [MPro](MPro.md) | | |
+|-----------|:---------:|:----------:|
+| [Etheno](Tools/Etheno.md) | | | 
+| [Mythril](Tools/Mythril.md) | Live | Static (CLI) | 
+| [Mythx](Tools/Mythx.md) | Live | (CLI/Web) | 
+| [Oyente](Tools/Oyente.md) | Live | Static (CLI) |
+| [Tenderly](Tools/Tenderly.md) | Live | Dynamic (CLI/Web) |
+| [Manticore](Tools/Manticore.md) | Live | (CLI)|
+| [Slither](Tools/Slither.md) | Live | Static (CLI) |
+| [Piet](Tools/Piet.md) | Live | Visualizer (Web) |
+| [Smart Check](Tools/SmartCheck.md) | | Static (Web) |
+| [Vertigo](Tools/Vertigo.md) | Live | Static (CLI) |
+| [Solidity Visual Auditor](Tools/SolVisualAuditor.md) | Live | Lint (Desktop-UI) |
+| [Solgraph](Tools/Solgraph.md) | | Visualizer (CLI) |
+| [MPro](Tools/MPro.md) | Not in use | Static |
 
 ## Vulnerability Tracker
 
