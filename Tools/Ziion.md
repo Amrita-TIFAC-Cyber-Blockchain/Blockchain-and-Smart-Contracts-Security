@@ -17,15 +17,15 @@
  - Substrate Node Template
 
 ### EVM Tools
- - Brownie
- - Certora-cli
- - Foundry
+ - **Brownie**
+ - **Certora-cli**
+ - **Foundry**
  - Ganache-cli
  - Ganache UI
  - Geth
  - Remix IDE
- - Scribble
- - Scribble-Generator
+ - **Scribble**
+ - **Scribble-Generator**
  - Solc-Select
  - Truffle
 
