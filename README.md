@@ -1,5 +1,5 @@
 # Smart Contract Security Analysis ![](https://img.shields.io/badge/-Live-brightgreen)
-![](https://img.shields.io/badge/Batch-20CYS-green) ![](https://img.shields.io/badge/Batch-21CYS-green) ![](https://img.shields.io/badge/Batch-PhD-darkgreen) <br/>   ![](https://img.shields.io/badge/BlockchainCourse-20CY712-green) ![](https://img.shields.io/badge/Focus-Smart_Contract_Security-yellow) <br/>
+![](https://img.shields.io/badge/Batch-20CYS-green) ![](https://img.shields.io/badge/Batch-21CYS-green) ![](https://img.shields.io/badge/Batch-PhD-darkgreen) ![](https://img.shields.io/badge/-B_RIG-darkgreen)<br/>   ![](https://img.shields.io/badge/BlockchainCourse-20CY712-green) ![](https://img.shields.io/badge/Focus-Smart_Contract_Security-yellow) <br/>
 ![](https://img.shields.io/badge/Blockchain-Ethereum-blue) ![](https://img.shields.io/badge/Blockchain-Hyperledger-blue) ![](https://img.shields.io/badge/Language-Solidity-blue) ![](https://img.shields.io/badge/Language-Vyper-blue) 
 
 This Repository details the series of works on **Smart Contract Vulnerability** and Security from 2020 to date in general and as part of **Blockchain Technology Course.**
@@ -47,11 +47,12 @@ To understand, explore and detect Vulnerabilities in Smart Contracts
 
 ### Credits
 
-- P. Gnanendra Prasad (GP) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
-- Sreelakshmi G (SG) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
-- Sreelakshmi TV (STV) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
+- _P. Gnanendra Prasad_ (GP) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
+- _Sreelakshmi G_ (SG) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
+- _Sreelakshmi TV_ (STV) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
 - Ramaguru Radhakrishnan (RG)
-- Pothuri Lakshmi Harika (PLH) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 21CY712 and M.Tech Dissertation)
+- _Pothuri Lakshmi Harika_ (PLH) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 21CY712 and M.Tech Dissertation)
+- _Ruthwik Krishna Bandreddy_ (RKB) part of B-RIG
 
 ## Publications 
 
