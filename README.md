@@ -1,5 +1,5 @@
 # Smart Contract Security Analysis ![](https://img.shields.io/badge/-Live-brightgreen)
-![](https://img.shields.io/badge/Batch-20CYS-green) ![](https://img.shields.io/badge/Batch-21CYS-green) ![](https://img.shields.io/badge/Batch-PhD-darkgreen) ![](https://img.shields.io/badge/-B_RIG-darkgreen)<br/>   ![](https://img.shields.io/badge/BlockchainCourse-20CY712-green) ![](https://img.shields.io/badge/Focus-Smart_Contract_Security-yellow) <br/>
+![](https://img.shields.io/badge/Batch-20CYS-green) ![](https://img.shields.io/badge/Batch-21CYS-green) ![](https://img.shields.io/badge/Batch-PhD-darkgreen) ![](https://img.shields.io/badge/-B_RIG-darkgreen)<br/>   ![](https://img.shields.io/badge/BlockchainCourse-20CY712-green)  ![](https://img.shields.io/badge/-M.Tech_Dissertation-blue) ![](https://img.shields.io/badge/Focus-Smart_Contract_Security-yellow) <br/>
 ![](https://img.shields.io/badge/Blockchain-Ethereum-blue) ![](https://img.shields.io/badge/Blockchain-Hyperledger-blue) ![](https://img.shields.io/badge/Language-Solidity-blue) ![](https://img.shields.io/badge/Language-Vyper-blue) 
 
 This Repository details the series of works on **Smart Contract Vulnerability** and Security from 2020 to date in general and as part of **Blockchain Technology Course.**
@@ -34,16 +34,31 @@ To understand, explore and detect Vulnerabilities in Smart Contracts
 | ![](https://img.shields.io/badge/-Ziion-red) [Solgraph](Tools/Solgraph.md) | | Visualizer (CLI) |
 | [MPro](Tools/MPro.md) | ![](https://img.shields.io/badge/-Not_in_Use-red) | Static |
 
+## Security Tools - Rule Definition Language
+
+| Tool Name | Rule Language  | 
+|-----------|:--------------:|
+| [Mythril](Tools/Mythril.md) | Mythril-L |
+| [Slither](Tools/Slither.md) | S-RDL |
+|  [Manticore](Tools/Manticore.md) | Manticore Language (MCL) |
+
+
+
 ## Vulnerability Tracker
 
 - [Decentralized Application Security Project (DASP) 10](https://dasp.co/)
 - [Smart Contract Weakness Classification (SWC)](https://swcregistry.io/) 
+- [Amrita Blockchain Vulnerability Tracker](https://amrita-tifac-cyber-blockchain.github.io/ABC-VT/index.html)
 
 ## Work Carried
 
 - **2021**
   - Explore Tenderly (GP, SG, STV, RG)
   - Explore Mythx (GP, SG, STV, RG)
+  
+- **2022**
+
+- **2023**
 
 ### Credits
 
