@@ -18,17 +18,17 @@ To understand, explore and detect Vulnerabilities in Smart Contracts
 
 ## Security Tools
 
-| Tool Name | Status  | Type |
-|-----------|:---------:|:----------:|
+| Tool Name |   Status  |     Type   | Rule Based |
+|-----------|:---------:|:----------:|:----------:|
 | [Etheno](Tools/Etheno.md) | | | 
-| ![](https://img.shields.io/badge/-Ziion-red) [Mythril](Tools/Mythril.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Static (CLI) | 
-| [Mythx](Tools/Mythx.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | (CLI/Web) | 
-| [Oyente](Tools/Oyente.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Static (CLI) |
-| [Tenderly](Tools/Tenderly.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Dynamic (CLI/Web) |
-| ![](https://img.shields.io/badge/-Ziion-red) [Manticore](Tools/Manticore.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | (CLI)|
-| ![](https://img.shields.io/badge/-Ziion-red) [Slither](Tools/Slither.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Static (CLI) |
+| ![](https://img.shields.io/badge/-Ziion-red) [Mythril](Tools/Mythril.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Static (CLI) | DSL |
+| [Mythx](Tools/Mythx.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | (CLI/Web) | SA, SE, FT | 
+| [Oyente](Tools/Oyente.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Static (CLI) | Hardcorded Rules |
+| [Tenderly](Tools/Tenderly.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Dynamic (CLI/Web) | SA, DA |
+| ![](https://img.shields.io/badge/-Ziion-red) [Manticore](Tools/Manticore.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | (CLI)| DSL |
+| ![](https://img.shields.io/badge/-Ziion-red) [Slither](Tools/Slither.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Static (CLI) | DSL |
 | [Piet](Tools/Piet.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Visualizer (Web) |
-| [Smart Check](Tools/SmartCheck.md) | | Static (Web) |
+| [Smart Check](Tools/SmartCheck.md) | | Static (Web) | YAML |
 | [Vertigo](Tools/Vertigo.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Static (CLI) |
 | [Solidity Visual Auditor](Tools/SolVisualAuditor.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Lint (Desktop-UI) |
 | ![](https://img.shields.io/badge/-Ziion-red) [Solgraph](Tools/Solgraph.md) | | Visualizer (CLI) |
@@ -40,7 +40,7 @@ To understand, explore and detect Vulnerabilities in Smart Contracts
 |-----------|:--------------:|
 | [Mythril](Tools/Mythril.md) | Mythril-L |
 | [Slither](Tools/Slither.md) | S-RDL |
-|  [Manticore](Tools/Manticore.md) | Manticore Language (MCL) |
+| [Manticore](Tools/Manticore.md) | Manticore Language (MCL) |
 
 
 
