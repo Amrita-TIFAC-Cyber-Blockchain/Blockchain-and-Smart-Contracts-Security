@@ -36,6 +36,7 @@ To understand, explore and detect Vulnerabilities in Smart Contracts
 | [Solidity Visual Auditor](Tools/SolVisualAuditor.md) | ![](https://img.shields.io/badge/-Live-brightgreen) | Lint (Desktop-UI) |
 | ![](https://img.shields.io/badge/-Ziion-red) [Solgraph](Tools/Solgraph.md) | | Visualizer (CLI) |
 | [MPro](Tools/MPro.md) | ![](https://img.shields.io/badge/-Not_in_Use-red) | Static |
+| [Securify](Tools/Securify.md) | | Static | |  ![](https://img.shields.io/badge/-Ethereum-gold) |
 | [Hyperledger Caliper](Tools/Caliper.md) | | Static |   | ![](https://img.shields.io/badge/-Fabric-brown) | 
 
 ## Security Tools - Rule Definition Language
