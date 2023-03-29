@@ -15,7 +15,7 @@
 | Adithya N S | ![](https://img.shields.io/badge/-Corda-red) | ![](https://img.shields.io/badge/-Research-blue) | Mythril, Oyente |
 | Agilprasanna P |  | ![](https://img.shields.io/badge/-Security-brown) | | 
 | Anaswara Suresh M K  | ![](https://img.shields.io/badge/-Corda-red) | ![](https://img.shields.io/badge/-Security-brown) | Oyente, Slither |
-| C S Amritha | ![](https://img.shields.io/badge/-Corda-red) | ![](https://img.shields.io/badge/-Research-blue) |  |
+| C S Amritha | ![](https://img.shields.io/badge/-Corda-red) | ![](https://img.shields.io/badge/-Research-blue) | HoneyBadger, Echinda |
 | Chitla Vyshali | |  ![](https://img.shields.io/badge/-Security-brown) | Slither, Vandal |
 | Harshith Gangisetty | | ![](https://img.shields.io/badge/-Research-blue) | Vandal, Osiris |
 | Joshua Anto A | | ![](https://img.shields.io/badge/-Security-brown) |  |
