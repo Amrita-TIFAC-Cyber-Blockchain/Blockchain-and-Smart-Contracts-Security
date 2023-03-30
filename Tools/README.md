@@ -34,6 +34,10 @@
 | [ETBMC]() | | Bounded Model Checking | | | 
 | [TeEther]() | | | | | 
 | [ContractWard]() | | Machine Learning | | | 
+| ConFuzzius | | Fuzzer | | ![](https://img.shields.io/badge/-Ethereum-gold) |
+| Conkas | | Static, Symbolic Execution |  | ![](https://img.shields.io/badge/-Ethereum-gold) | 
+| eThor | | Static | | |
+| Pakala | | Symbolic Execution | | |
 
 ### Patching
 
