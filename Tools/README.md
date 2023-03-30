@@ -6,6 +6,8 @@
 
 ## Security Tools
 
+### Detection
+
 | Tool Name |   Status  |     Type   | Rule Based | Blockchain |
 |-----------|:---------:|:----------:|:----------:|:----------:|
 | [Etheno](Tools/Etheno.md) | | | SA, DA | ![](https://img.shields.io/badge/-Ethereum-gold) |
@@ -23,6 +25,21 @@
 | [MPro](Tools/MPro.md) | ![](https://img.shields.io/badge/-Not_in_Use-red) | Static |
 | [Securify](Tools/Securify.md) | | Static | |  ![](https://img.shields.io/badge/-Ethereum-gold) |
 | [Hyperledger Caliper](Tools/Caliper.md) | | Static |   | ![](https://img.shields.io/badge/-Fabric-brown) | 
+| [NeuCheck](Tools/NeuCheck.md) |  | | | 
+| [Surya](Tools/Surya.md) | | | | 
+| [Gas Gauge](Tools/GasGauge.md) | | | | 
+| [Zeus](Tools/Zeus.md) | | | | 
+| [WANA]() |  | | | ![](https://img.shields.io/badge/-EOSIO-silver) | 
+| [ESCORT]() | | Deep Learning and Transfer Learning | | | 
+| [ETBMC]() | | Bounded Model Checking | | | 
+| [TeEther]() | | | | | 
+| [ContractWard]() | | Machine Learning | | | 
+
+### Patching
+
+| Tool Name |   Status  |     Type   | Rule Based | Blockchain |
+|-----------|:---------:|:----------:|:----------:|:----------:|
+| EVMPatch | | | | |
 
 ## Security Tools - Rule Definition Language
 
@@ -31,4 +48,12 @@
 | [Mythril](Tools/Mythril.md) | Mythril-L |
 | [Slither](Tools/Slither.md) | S-RDL |
 | [Manticore](Tools/Manticore.md) | Manticore Language (MCL) |
+
+## Frameworks
+
+| Framework Name | Status | Tools used | Methodology  | Link | 
+|:--------------:|:------:|:----------:|:------------:|:----:|
+| ScrawlD |  | Slither, Mythril, Smartcheck, Oyente, Osiris |  | [ScrawlD](https://github.com/ramagururadhakrishnan/ScrawlD) |
+| SmartBugs |  | ConFuzzius, Conkas, Ethainter, eThor, HoneyBadger, <br/> MadMax, Maian, Manticore, Mythril, Osiris <br/> Oyente, Pakala, Securify, sFuzz, Slither, <br/> Smartcheck, Solhint, teEther, Vandal | | [SmartBugs](https://github.com/ramagururadhakrishnan/smartbugs) |
+| Vulpedia |  | Slither, Smartcheck, Oyente | |  | 
 
