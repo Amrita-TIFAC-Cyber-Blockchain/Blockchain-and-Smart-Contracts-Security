@@ -38,6 +38,9 @@
 | Conkas | | Static, Symbolic Execution |  | ![](https://img.shields.io/badge/-Ethereum-gold) | 
 | eThor | | Static | | |
 | Pakala | | Symbolic Execution | | |
+| Halmos | | Symbolic Execution | | | 
+| Pyrometer | | Symbolic Execution | | | 
+| solstat | | Static Analyser |  | | 
 
 ### Patching
 
