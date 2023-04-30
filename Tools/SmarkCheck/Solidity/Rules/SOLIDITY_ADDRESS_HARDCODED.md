@@ -5,6 +5,10 @@
 
 ## SOLIDITY_ADDRESS_HARDCODED
 
+### Rule Description
+The contract contains unknown address. This address might be used for some malicious activity. Please check hardcoded address and it's usage.
+### Solidity-Rules
+
 ![](https://img.shields.io/badge/Pattern_ID-adc165-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
 ```
@@ -73,4 +77,87 @@ contract C {
         }      
     }
 }
+```
+### Code Result
+
+```
+SOLIDITY_ADDRESS_HARDCODED
+patternId: adc165
+severity: 1
+line: 13
+column: 20
+content: 0xf64B584972FE6055a770477670208d737Fff282f
+
+ruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: adc165
+severity: 1
+line: 15
+column: 14
+content: 0x72ba7d8e73fe8eb666ea66babc8116a41bfb10e2
+
+ruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: b140cd
+severity: 1
+line: 17
+column: 12
+content: 0x123
+
+ruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: f32db1
+severity: 1
+line: 19
+column: 20
+content: 342
+
+ruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: a91b18
+severity: 1
+line: 20
+column: 8
+content: x=address(0)
+
+ruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: a91b18
+severity: 1
+line: 21
+column: 13
+content: (address(0))
+
+ruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: c67a09
+severity: 1
+line: 22
+column: 12
+content: 0x0
+
+ruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: c67a09
+severity: 1
+line: 23
+column: 14
+content: 0x0
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 7
+column: 4
+content: functiong(addresss)returns(address){returns;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 11
+column: 4
+content: functionbadPractice(){addressx=0xf64B584972FE6055a770477670208d737Fff282f;x=g(0x72ba7d8e73fe8eb666ea66babc8116a41bfb10e2);x=0x123;x=address(342);x=address(0);x=g(address(0));x=0x0;x=g(0x0);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 26
+column: 4
+content: functiongoodPractice(address_token,uintbalance){if((address(0)==_token)||(0x0==_token)){Transfer(address(0),balance);}if((address(0)!=_token)||(0x0!=_token)){Transfer(0x0,balance);}}
+
+SOLIDITY_VISIBILITY :3
+SOLIDITY_ADDRESS_HARDCODED :8
 ```
