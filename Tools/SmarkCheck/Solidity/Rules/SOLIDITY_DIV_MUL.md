@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_DIV_MUL
+### Rule Description
+Solidity operates only with integers. Thus, if the division is done before the multiplication,the rounding errors can increase dramatically.
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-09hhh1-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -67,4 +70,69 @@ using SafeMath for uint256;
 
     }
 }
+```
+### Code Result
+
+```
+SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 4
+column: 2
+content: functionmul(uint256a,uint256b)internalconstantreturns(uint256){uint256c=a*b;assert(a==0||c/a==b);returnc;}
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 10
+column: 2
+content: functiondiv(uint256a,uint256b)internalconstantreturns(uint256){uint256c=a/b;returnc;}
+
+ruleId: SOLIDITY_DIV_MUL
+patternId: 09hhh1
+severity: 2
+line: 27
+column: 17
+content: a1/a2*a3
+
+ruleId: SOLIDITY_DIV_MUL
+patternId: 09hhh1
+severity: 2
+line: 31
+column: 11
+content: a1*(a2/a3)
+
+ruleId: SOLIDITY_DIV_MUL
+patternId: 09hhh1
+severity: 2
+line: 36
+column: 12
+content: (a1.div(a2)).mul(a3)
+
+ruleId: SOLIDITY_DIV_MUL
+patternId: 09hhh1
+severity: 2
+line: 40
+column: 11
+content: a1.mul(a2/a3)
+
+ruleId: SOLIDITY_SAFEMATH
+patternId: 837cac
+severity: 1
+line: 20
+column: 0
+content: usingSafeMathforuint256;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 22
+column: 4
+content: functiontest(){uinta1=1;uinta2=2;uinta3=3;uinta=a1/a2*a3;for(uinti=0;a1/(a2*a3)>=i;i++){}if(a1*(a2/a3)>=1){}a=a1*a2/a3;a=(a1.div(a2)).mul(a3);for(uintj=0;a1/(a2.mul(a3))>=j;j++){}if(a1.mul(a2/a3)>=1){}a=a1.mul(a2).div(a3);}
+
+SOLIDITY_VISIBILITY :1
+SOLIDITY_SAFEMATH :1
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :2
+SOLIDITY_DIV_MUL :4
+
 ```
