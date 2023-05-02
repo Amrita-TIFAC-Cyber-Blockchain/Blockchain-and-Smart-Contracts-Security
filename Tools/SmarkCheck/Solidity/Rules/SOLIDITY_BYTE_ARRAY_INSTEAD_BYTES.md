@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_BYTE_ARRAY_INSTEAD_BYTES
+### Rule Description
+Lower gas consumption
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-f13a9f-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -27,4 +30,41 @@ contract C {
     bytes someVariable2;
     uint[] data;
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_BYTE_ARRAY_INSTEAD_BYTES
+patternId: f13a9f
+severity: 1
+line: 5
+column: 4
+content: byte[]
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 5
+column: 4
+content: byte[]someVariable1;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 7
+column: 4
+content: bytessomeVariable2;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 8
+column: 4
+content: uint[]data;
+
+SOLIDITY_VISIBILITY :3
+SOLIDITY_BYTE_ARRAY_INSTEAD_BYTES :1
+
+
 ```
