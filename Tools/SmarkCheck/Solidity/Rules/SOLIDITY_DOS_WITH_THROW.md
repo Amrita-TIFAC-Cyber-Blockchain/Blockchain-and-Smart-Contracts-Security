@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_DOS_WITH_THROW
+### Rule Description
+Prior to version 0.5.0, Solidity compiler handles code inside do-while loop incorrectly it will ignores code while condition.
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-637fdc-gold) ![](https://img.shields.io/badge/Severity-3-brown) 
 
@@ -46,4 +49,57 @@ contract Auction {
         }
     } */
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_DO_WHILE_CONTINUE
+patternId: 94fra3
+severity: 1
+line: 7
+column: 8
+content: do{continue;}while(false)
+
+ruleId: SOLIDITY_DO_WHILE_CONTINUE
+patternId: 94fra3
+severity: 1
+line: 25
+column: 8
+content: do{for(uintj;j<10;j++){continue;}continue;}while(false)
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 14
+column: 18
+content: false
+
+ruleId: SOLIDITY_PRAGMAS_VERSION
+patternId: 23fc32
+severity: 1
+line: 1
+column: 16
+content: ^
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 5
+column: 4
+content: functiondoWhile(){do{continue;}while(false);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 12
+column: 4
+content: functiondoWhile_2(){do{while(false){continue;}}while(false);do{for(uinti;i<10;i++){continue;}}while(false);do{for(uintj;j<10;j++){continue;}continue;}while(false);}
+
+SOLIDITY_VISIBILITY :2
+SOLIDITY_PRAGMAS_VERSION :1
+SOLIDITY_GAS_LIMIT_IN_LOOPS :1
+SOLIDITY_DO_WHILE_CONTINUE :2
+
+
 ```
