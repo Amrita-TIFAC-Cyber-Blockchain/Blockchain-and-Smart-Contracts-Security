@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_DEPRECATED_CONSTRUCTIONS
+### Rule Description
+Deprecated constructions
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-27cb59-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -75,3 +78,128 @@ contract C {
     }
 }
 ```
+### Code Result
+
+```
+SOLIDITY_ADDRESS_HARDCODED
+patternId: c67a09
+severity: 1
+line: 6
+column: 16
+content: 0x0
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 27cb59
+severity: 1
+line: 6
+column: 8
+content: suicide
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 27cb59
+severity: 1
+line: 22
+column: 12
+content: suicide
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 10
+column: 15
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 20
+column: 17
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 49bd2a
+severity: 1
+line: 14
+column: 30
+content: throw
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 26
+column: 4
+content: functionreturnSenderBalance(uinta)constantreturns(uint){returna;}
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 852kwn
+severity: 1
+line: 32
+column: 19
+content: years
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 14
+column: 8
+content: if(_e!=address(0))throw;
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 18
+column: 8
+content: assembly{r:=sha3('','')suicide(0x0)}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 4
+column: 4
+content: functionkill(){suicide(0x0);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 8
+column: 4
+content: functionhashingsha3(strings)returns(bytes32hash){returnsha3(s);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 12
+column: 4
+content: functiondelegatecallSetN(address_e,uint_n){if(_e!=address(0))throw;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 16
+column: 4
+content: functionkiller(){uintr;assembly{r:=sha3('','')suicide(0x0)}}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 26
+column: 4
+content: functionreturnSenderBalance(uinta)constantreturns(uint){returna;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 30
+column: 4
+content: functionusingYears()returns(uint){return100years;}
+
+SOLIDITY_VISIBILITY :6
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :7
+SOLIDITY_REVERT_REQUIRE :1
+SOLIDITY_ADDRESS_HARDCODED :1
+SOLIDITY_USING_INLINE_ASSEMBLY :1
+
+
+```
+
+
