@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_CONSTRUCTOR_RETURN
+### Rule Description
+Statement is used in contract's constructor. With code return the process of deploy will differ from the intuitive one. For instance, deployed bytecode may not include functions implemented in the source.
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-8saf21-gold) ![](https://img.shields.io/badge/Severity-3-brown) 
 
@@ -94,3 +97,56 @@ contract FPTest {
     }
 }
 ```
+
+### Code Result
+
+```
+SOLIDITY_CONSTRUCTOR_RETURN
+patternId: 8saf21
+severity: 3
+line: 10
+column: 19
+content: return(add(0x20,contract_identifier),mload(contract_identifier))
+
+ruleId: SOLIDITY_CONSTRUCTOR_RETURN
+patternId: 7gaf21
+severity: 3
+line: 26
+column: 19
+content: return(add(0x20,contract_identifier),mload(contract_identifier))
+
+ruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 35
+column: 0
+content: contractFPTest{functionFPTest(addresstarget)publicpayable{assembly{letfreeMemoryPtrPosition:=0x40letcalldataMemoryOffset:=mload(freeMemoryPtrPosition)mstore(freeMemoryPtrPosition,add(calldataMemoryOffset,calldatasize))calldatacopy(calldataMemoryOffset,0x0,calldatasize)letret:=delegatecall(gas,target,calldataMemoryOffset,calldatasize,0,0)letreturndataMemoryOffset:=mload(freeMemoryPtrPosition)mstore(freeMemoryPtrPosition,add(returndataMemoryOffset,returndatasize))returndatacopy(returndataMemoryOffset,0x0,returndatasize)switchretcase0{revert(returndataMemoryOffset,returndatasize)}}}}
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 10
+column: 8
+content: assembly{return(add(0x20,contract_identifier),mload(contract_identifier))}
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 26
+column: 8
+content: assembly{return(add(0x20,contract_identifier),mload(contract_identifier))}
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 38
+column: 8
+content: assembly{letfreeMemoryPtrPosition:=0x40letcalldataMemoryOffset:=mload(freeMemoryPtrPosition)mstore(freeMemoryPtrPosition,add(calldataMemoryOffset,calldatasize))calldatacopy(calldataMemoryOffset,0x0,calldatasize)letret:=delegatecall(gas,target,calldataMemoryOffset,calldatasize,0,0)letreturndataMemoryOffset:=mload(freeMemoryPtrPosition)mstore(freeMemoryPtrPosition,add(returndataMemoryOffset,returndatasize))returndatacopy(returndataMemoryOffset,0x0,returndatasize)switchretcase0{revert(returndataMemoryOffset,returndatasize)}}
+
+SOLIDITY_LOCKED_MONEY :1
+SOLIDITY_USING_INLINE_ASSEMBLY :3
+SOLIDITY_CONSTRUCTOR_RETURN :2
+
+
+```
+
