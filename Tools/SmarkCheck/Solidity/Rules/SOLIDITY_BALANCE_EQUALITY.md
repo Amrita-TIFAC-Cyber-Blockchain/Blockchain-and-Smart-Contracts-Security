@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_BALANCE_EQUALITY
+### Rule Description
+The balance is checked for strict equality.Avoid checking for strict balance equality:an adversary can forcibly send ether to any address via selfdestruct() or by mining.
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-5094ad-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -22,55 +25,94 @@ expression
 ### Sample Code
 
 ```
-pragma solidity 0.4.24;
+pragma solidity 0.6.0;
 
-contract CallValue {
+contract C {
 
-    function withdraw1() {
-    // <yes> <report> SOLIDITY_CALL_WITHOUT_DATA om991k
-        if (msg.sender.call.value(1)()) {
+    function badPrictice(address addr) public {
+        // <yes> <report> SOLIDITY_BALANCE_EQUALITY 5094ad
+        if (this.balance == 100 wei) {
+        }
+        // <yes> <report> SOLIDITY_BALANCE_EQUALITY 5094ad
+        if (address(this).balance != 100 wei) {
+        }
+        // <yes> <report> SOLIDITY_BALANCE_EQUALITY 5094ad
+        if (addr.balance != 100 wei) {
+        }
+        // <yes> <report> SOLIDITY_BALANCE_EQUALITY 5094ad
+        if((addr.balance) == 0) {
+        }
+        // <yes> <report> SOLIDITY_BALANCE_EQUALITY 5094ad
+        if(1 + addr.balance == 0) {
         }
     }
-    function withdraw2() {
-    // <yes> <report> SOLIDITY_CALL_WITHOUT_DATA om991k
-        if (msg.sender.call()) {
+
+    function myFoo(uint[] memory a) public returns(uint) {
+        a[1];
+        a[1:];
+        a[:2];
+        return a[1:2];
+    }
+
+    function goodPrictice(address addr) public {
+        if(myFoo(addr.balance) == 0) {
+        }
+        if (this.balance > 100 wei) {
+        }
+        if (address(this).balance >= 100 wei) {
+        }
+        if (addr.balance <= 100 wei) {
+        }
+        if (msg.sender.balance < 100 wei) {
+        }
+        if (foo(addr).balance >= 100 wei) {
         }
     }
-    function withdraw3() {
-    // <yes> <report> SOLIDITY_CALL_WITHOUT_DATA lr991l
-        if (msg.sender.call.gas(100000)()) {
-        }
+
+    function foo(address _addr) public returns(address) {
+        return _addr;
     }
-    function withdraw4() {
-        if (msg.sender.call.value(1)(3)) {
-        }
-    }
-    function withdraw5() {
-        // <yes> <report> SOLIDITY_CALL_WITHOUT_DATA 111ppp
-        if (msg.sender.call.value(1)("")) {
-        }
-    }
-    function withdraw6() {
-        // <yes> <report> SOLIDITY_CALL_WITHOUT_DATA 111ppp
-        if (msg.sender.call("")) {
-        }
-    }
-    function withdraw7() {
-        // <yes> <report> SOLIDITY_CALL_WITHOUT_DATA 111ttt
-        if (msg.sender.call.gas(100000)("")) {
-        }
-    }
-    function withdraw8() {
-        if (msg.sender.call.value(1)(" ")) {
-        }
-    }
-    function withdraw9() {
-        if (msg.sender.call("", 1)) {
-        }
-    }
-    function withdraw10() {
-        if (msg.sender.call.gas(100000)("", 1)) {
-        }
-    }
-}
+}  
+```
+
+### Code Result
+
+```
+SOLIDITY_BALANCE_EQUALITY
+patternId: 5094ad
+severity: 1
+line: 7
+column: 12
+content: this.balance==100wei
+
+ruleId: SOLIDITY_BALANCE_EQUALITY
+patternId: 5094ad
+severity: 1
+line: 10
+column: 12
+content: address(this).balance!=100wei
+
+ruleId: SOLIDITY_BALANCE_EQUALITY
+patternId: 5094ad
+severity: 1
+line: 13
+column: 12
+content: addr.balance!=100wei
+
+ruleId: SOLIDITY_BALANCE_EQUALITY
+patternId: 5094ad
+severity: 1
+line: 16
+column: 11
+content: (addr.balance)==0
+
+ruleId: SOLIDITY_BALANCE_EQUALITY
+patternId: 5094ad
+severity: 1
+line: 19
+column: 11
+content: 1+addr.balance==0
+
+SOLIDITY_BALANCE_EQUALITY :5
+
 ```
