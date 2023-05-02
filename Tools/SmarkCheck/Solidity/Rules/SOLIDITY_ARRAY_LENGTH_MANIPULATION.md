@@ -5,6 +5,9 @@
 
 ## SOLIDITY_ARRAY_LENGTH_MANIPULATION
 
+### Rule Description
+The length of the dynamic array is changed directly. In this case, the appearance of gigantic arrays is possible and it can lead to a storage overlap attack (collisions with other data in storage)
+
 ![](https://img.shields.io/badge/Pattern_ID-872bdd-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
 ```
@@ -74,4 +77,90 @@ contract dataStorage {
         }
     }
 }
+```
+### Code Result
+
+```
+SOLIDITY_ARRAY_LENGTH_MANIPULATION
+patternId: 872bdd
+severity: 1
+line: 13
+column: 8
+content: data.length=10
+
+ruleId: SOLIDITY_ARRAY_LENGTH_MANIPULATION
+patternId: 872bdd
+severity: 1
+line: 15
+column: 8
+content: data.length--
+
+ruleId: SOLIDITY_ARRAY_LENGTH_MANIPULATION
+patternId: 872bdd
+severity: 1
+line: 17
+column: 8
+content: data.length*=2
+
+ruleId: SOLIDITY_ARRAY_LENGTH_MANIPULATION
+patternId: 872bdd
+severity: 1
+line: 19
+column: 8
+content: data.length-=2
+
+ruleId: SOLIDITY_ARRAY_LENGTH_MANIPULATION
+patternId: 872bdd
+severity: 1
+line: 21
+column: 8
+content: data.length+=2
+
+ruleId: SOLIDITY_ARRAY_LENGTH_MANIPULATION
+patternId: 872bdd
+severity: 1
+line: 23
+column: 8
+content: data.length/=2
+
+ruleId: SOLIDITY_ARRAY_LENGTH_MANIPULATION
+patternId: 43ba1c
+severity: 1
+line: 9
+column: 12
+content: data.length++
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 7
+column: 8
+content: for(uinti=0;i<_data.length;i++){data.length++;data[i]=_data[i];}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 27
+column: 8
+content: for(uinti=0;i<_data.length;i++){data.push(_data[i]);}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 7
+column: 8
+content: for(uinti=0;i<_data.length;i++){data.length++;data[i]=_data[i];}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 27
+column: 8
+content: for(uinti=0;i<_data.length;i++){data.push(_data[i]);}
+
+SOLIDITY_ARRAY_LENGTH_MANIPULATION :7
+SOLIDITY_EXTRA_GAS_IN_LOOPS :2
+SOLIDITY_GAS_LIMIT_IN_LOOPS :2
+
+
 ```
