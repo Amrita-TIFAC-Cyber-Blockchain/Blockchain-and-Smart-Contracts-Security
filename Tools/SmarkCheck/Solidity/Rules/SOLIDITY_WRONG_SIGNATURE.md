@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_WRONG_SIGNATURE
+### Rule Description
+<p>
+    In Solidity, the function signature is defined as the canonical expression of the basic prototype without data location specifier, i.e. the function name with the parenthesised list of parameter types. Parameter types are split by a single comma - no spaces are used. This means one should use <code>uint256</code> and <code>int256</code> instead of <code>uint</code> or <code>int</code>.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-ui25n6-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -134,4 +140,265 @@ contract A {
         return _spender.call(abi.encodeWithSignature("receiveApproval(int256[],address)"), _value, msg.sender);
     }
 }
+```
+
+### Code Result
+
+```
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 7
+column: 63
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 18
+column: 45
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 29
+column: 44
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 38
+column: 46
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 62
+column: 48
+content: sha3
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 7
+column: 25
+content: call.value(10).gas(11)(bytes4(bytes32(sha3("receiveApproval(address,uint)"))),msg.sender,_value)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 13
+column: 25
+content: call(bytes4(bytes32(keccak256("receiveApproval(address,int,address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 18
+column: 25
+content: call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 23
+column: 25
+content: call(bytes4(bytes32(keccak256("receiveApproval(address,int256)"))),msg.sender,_value)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 29
+column: 24
+content: call.gas(11)(bytes4(sha3("receiveApproval(address,uint)")),msg.sender,_value)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 34
+column: 24
+content: call(bytes4(keccak256("receiveApproval(address,int, address)")),msg.sender,_value,this)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 38
+column: 24
+content: call.value(10)(bytes4(sha3("receiveApproval(address,address)")),msg.sender,this)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 43
+column: 24
+content: call(abi.encodeWithSignature("receiveApproval(address,uint)"),msg.sender,_value)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 48
+column: 24
+content: call(abi.encodeWithSignature("receiveApproval(address,int)"),msg.sender,_value)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 53
+column: 24
+content: call(abi.encodeWithSignature("receiveApproval(uint,address)"),_value,msg.sender)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 57
+column: 24
+content: call(abi.encodeWithSignature("receiveApproval(uint256,address)"),_value,msg.sender)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 62
+column: 25
+content: call.value(10)(bytes4((sha3("receiveApproval(address,int[],address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 68
+column: 25
+content: call(bytes4(bytes32(keccak256("receiveApproval(address,uint[],address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 73
+column: 25
+content: call(bytes4(bytes32(keccak256("receiveApproval(address,uint256[],address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 79
+column: 24
+content: call(abi.encodeWithSignature("receiveApproval(uint[],address)"),_value,msg.sender)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 83
+column: 24
+content: call(abi.encodeWithSignature("receiveApproval(int256[],address)"),_value,msg.sender)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 60
+column: 37
+content: int[]_value
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 66
+column: 37
+content: uint[]_value
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 72
+column: 37
+content: uint256[]_value
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 77
+column: 37
+content: uint[]_value
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 82
+column: 37
+content: int256[]_value
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: ui25n6
+severity: 2
+line: 7
+column: 25
+content: call.value(10).gas(11)(bytes4(bytes32(sha3("receiveApproval(address,uint)"))),msg.sender,_value)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: ui25n6
+severity: 2
+line: 13
+column: 25
+content: call(bytes4(bytes32(keccak256("receiveApproval(address,int,address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: ui25n6
+severity: 2
+line: 29
+column: 24
+content: call.gas(11)(bytes4(sha3("receiveApproval(address,uint)")),msg.sender,_value)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: ui25n6
+severity: 2
+line: 34
+column: 24
+content: call(bytes4(keccak256("receiveApproval(address,int, address)")),msg.sender,_value,this)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: ui25n6
+severity: 2
+line: 62
+column: 25
+content: call.value(10)(bytes4((sha3("receiveApproval(address,int[],address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: ui25n6
+severity: 2
+line: 68
+column: 25
+content: call(bytes4(bytes32(keccak256("receiveApproval(address,uint[],address)"))),msg.sender,_value,this)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: rec155
+severity: 2
+line: 43
+column: 28
+content: (abi.encodeWithSignature("receiveApproval(address,uint)"),msg.sender,_value)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: rec155
+severity: 2
+line: 48
+column: 28
+content: (abi.encodeWithSignature("receiveApproval(address,int)"),msg.sender,_value)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: rec155
+severity: 2
+line: 53
+column: 28
+content: (abi.encodeWithSignature("receiveApproval(uint,address)"),_value,msg.sender)
+
+ruleId: SOLIDITY_WRONG_SIGNATURE
+patternId: rec155
+severity: 2
+line: 79
+column: 28
+content: (abi.encodeWithSignature("receiveApproval(uint[],address)"),_value,msg.sender)
+
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :5
+SOLIDITY_UPGRADE_TO_050 :21
+SOLIDITY_WRONG_SIGNATURE :10
+
 ```
