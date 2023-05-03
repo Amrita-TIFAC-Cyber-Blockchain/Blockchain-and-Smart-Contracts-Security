@@ -4,6 +4,16 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_EXACT_TIME
+### Rule Description
+<p>
+    Strict comparison with <code>block.timestamp</code> or <code>now</code>. Miners can affect <code>block.timestamp</code> for their benefits. Thus, one should not rely on the exact value of <code>block.timestamp</code>.
+</p>
+<p>
+    Vulnerability type by SmartDec classification: <a href="https://github.com/smartdec/classification#block-content-manipulation">
+    Timestamp manipulation</a>.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-1955d9-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -39,3 +49,40 @@ contract TimestampDependence {
     }
 }
 ```
+### Code Result
+
+```
+SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 8
+column: 13
+content: startTime+1days==block.timestamp
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 10
+column: 13
+content: startTime+1days!=now
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 5
+column: 4
+content: functiondoSomething(){uintstartTime=now;if(startTime+1days==block.timestamp){}if(startTime+1days!=now){}require(true==ICOisEnd(now));require(now>=startTime&&now<=startTime+1days);require(now>startTime+1days);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 16
+column: 4
+content: functionICOisEnd(uint_time)returns(bool){return_time>1000000000;}
+
+SOLIDITY_VISIBILITY :2
+SOLIDITY_EXACT_TIME :2
+
+
+```
+
