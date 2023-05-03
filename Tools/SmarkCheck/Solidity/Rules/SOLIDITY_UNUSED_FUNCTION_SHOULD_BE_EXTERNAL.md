@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_UNUSED_FUNCTION_SHOULD_BE_EXTERNAL
+### Rule Description
+<p>
+    A function with <code>public</code> visibility modifier that is not called internally. Changing visibility level to <code>external</code> increases code readability. Moreover, in many cases functions with <code>external</code> visibility modifier spend less gas comparing to functions with <code>public</code> visibility modifier.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-73ufc1-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -134,4 +140,16 @@ contract Child is Test {
 interface ITest {
     function notUsed() public;
 }
+```
+### Code Result
+
+```
+ruleId: SOLIDITY_VISIBILITY
+patternId: 23rt6g
+severity: 1
+line: 62
+column: 23
+content: public
+
+SOLIDITY_VISIBILITY :1
 ```
