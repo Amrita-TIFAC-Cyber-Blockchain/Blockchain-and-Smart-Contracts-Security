@@ -4,6 +4,13 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_VISIBILITY
+### Rule Description
+<p>
+    The default function visibility level in contracts is <code>public</code>, in interfaces - <code>external</code>, state variable default visibility level is <code>internal</code>.
+    In contracts, the fallback function can be <code>external</code> or <code>public</code>. In interfaces, all the functions should be declared as <code>external</code>. Explicitly define function visibility to prevent confusion.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-23rt6g-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -171,3 +178,181 @@ library LibraryVisibility {
     }
 }
 ```
+### Code Result
+
+```
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 14
+column: 4
+content: functionisServer(addresssender)publicconstantreturns(bool){returnsender==msg.sender;}
+
+ruleId: SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA
+patternId: 5616b2
+severity: 1
+line: 7
+column: 9
+content: private
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 91h3sa
+severity: 1
+line: 28
+column: 16
+content: private
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 91h3sa
+severity: 1
+line: 81
+column: 16
+content: public
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 91h3sa
+severity: 1
+line: 96
+column: 16
+content: internal
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 91h3sa
+severity: 1
+line: 102
+column: 16
+content: public
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 91h3sa
+severity: 1
+line: 114
+column: 16
+content: private
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 23rt6g
+severity: 1
+line: 64
+column: 30
+content: public
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 23rt6g
+severity: 1
+line: 67
+column: 30
+content: private
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 23rt6g
+severity: 1
+line: 70
+column: 30
+content: internal
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 23rt6g
+severity: 1
+line: 102
+column: 16
+content: public
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 23rt6g
+severity: 1
+line: 114
+column: 16
+content: private
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 10
+column: 4
+content: functiontransfer(){x=0;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 36
+column: 4
+content: constructor(){addressowner=msg.sender;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 48
+column: 4
+content: functionAccessManager(address_server,address_guardian)returns(address){return_server;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 53
+column: 4
+content: function(){}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 61
+column: 4
+content: functionnoVisibility1();
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 108
+column: 4
+content: function();
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 120
+column: 4
+content: functionnoVisibility(){}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: d67c21
+severity: 1
+line: 28
+column: 16
+content: private
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: d67c21
+severity: 1
+line: 96
+column: 16
+content: internal
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 6
+column: 4
+content: uintx;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 321aca
+severity: 1
+line: 40
+column: 4
+content: constructor()external{addressowner=msg.sender;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 321aca
+severity: 1
+line: 44
+column: 4
+content: constructor()private{addressowner=msg.sender;}
+
+SOLIDITY_VISIBILITY :17
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :1
+SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA :1
+SOLIDITY_UPGRADE_TO_050 :5
+
+```
+
