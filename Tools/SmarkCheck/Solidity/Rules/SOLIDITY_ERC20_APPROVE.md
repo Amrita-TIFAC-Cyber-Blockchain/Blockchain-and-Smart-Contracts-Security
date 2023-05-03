@@ -4,6 +4,11 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_ERC20_APPROVE
+### Rule Description
+The <code>approve</code> function of ERC-20 is vulnerable. Using front-running attack one can spend approved tokens before change of <code>allowance</code> value.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-af782c-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -107,4 +112,160 @@ contract New2 {
 contract ERC20 {
     function approve(address spender, uint256 value) public returns (bool);
 }
+```
+### Code Result
+
+```
+SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 49bd2a
+severity: 1
+line: 10
+column: 26
+content: throw
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 49bd2a
+severity: 1
+line: 34
+column: 29
+content: throw
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 49bd2a
+severity: 1
+line: 45
+column: 29
+content: throw
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 49bd2a
+severity: 1
+line: 55
+column: 29
+content: throw
+
+ruleId: SOLIDITY_ERC20_APPROVE
+patternId: af782c
+severity: 2
+line: 5
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_ERC20_APPROVE
+patternId: af782c
+severity: 2
+line: 17
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_ERC20_APPROVE
+patternId: af782c
+severity: 2
+line: 29
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_ERC20_APPROVE
+patternId: af782c
+severity: 2
+line: 40
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 10
+column: 5
+content: if(_value<20wei)throw;
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 34
+column: 8
+content: if(_value<20wei)throw;
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 45
+column: 8
+content: if(_value<20wei)throw;
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 55
+column: 8
+content: if(_value<20wei)throw;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 5
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 9
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 17
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 29
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 33
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 40
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 44
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 50
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 54
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;returntrue;}
+
+SOLIDITY_VISIBILITY :9
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :4
+SOLIDITY_REVERT_REQUIRE :4
+SOLIDITY_ERC20_APPROVE :4
+
 ```
