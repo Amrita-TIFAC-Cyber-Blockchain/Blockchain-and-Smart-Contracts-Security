@@ -4,6 +4,16 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_PRIVATE_MODIFIER_DOES_NOT_HIDE_DATA
+### Rule Description
+<p>
+    Contrary to a popular misconception, the <code>private</code> modifier does not make a variable invisible. Miners have access to all contracts’ code and data. Developers must account for the lack of privacy in Ethereum.
+</p>
+<p>
+    Vulnerability type by SmartDec classification: <a href="https://github.com/smartdec/classification#privacy">
+    Privacy</a>.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-5616b2-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -22,4 +32,25 @@ contract MarketPlace {
     
     uint data2;
 }
+```
+### Code Result
+
+```
+SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA
+patternId: 5616b2
+severity: 1
+line: 5
+column: 9
+content: private
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 7
+column: 4
+content: uintdata2;
+
+SOLIDITY_VISIBILITY :1
+SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA :1
+
 ```
