@@ -9,6 +9,7 @@
     Dangerous use of inline assembly instruction of <code>CALL</code> family, which overwrites the input with the output.
     In case the arbitrary address is called return value may differ from expected one.
 </p>
+
 ### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-f34j6k-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
