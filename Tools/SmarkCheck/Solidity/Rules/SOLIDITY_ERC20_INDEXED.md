@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_ERC20_INDEXED
+### Rule Description
+Address arguments of <code>Transfer</code> and <code>Approve</code> events of ERC-20 token standard must be indexed.
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-ac081b-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -76,4 +79,10 @@ contract SendSomething2 {
 contract SendSomething3 {
     event Approval(address indexed _to);
 }
+```
+### Code Result
+
+```
+SOLIDITY_ERC20_INDEXED.sol
+jar:file:/C:/Users/Pothuri%20Harika/AppData/Roaming/npm/node_modules/@smartdec/smartcheck/jdeploy-bundle/smartcheck-2.0-jar-with-dependencies.jar!/solidity-rules.xml
 ```
