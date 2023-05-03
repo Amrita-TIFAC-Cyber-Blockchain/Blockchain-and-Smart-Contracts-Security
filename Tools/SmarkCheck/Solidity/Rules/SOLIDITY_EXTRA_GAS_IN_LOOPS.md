@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_EXTRA_GAS_IN_LOOPS
+### Rule Description
+<p>
+    State variable, <code>.balance</code>, or <code>.length</code> of non-memory array is used in the condition of <code>for</code> or <code>while</code> loop. In this case, every iteration of loop consumes extra gas.
+</p>
+### Solidity-Rules
+
 
 ![](https://img.shields.io/badge/Pattern_ID-d3j11j-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -212,3 +218,210 @@ contract GasInLoops {
 
 }
 ```
+
+### Code Result
+
+```
+SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 7
+column: 8
+content: for(uinti=0;i<address(this).balance;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 44
+column: 8
+content: for(uinti=0;i<x;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 63
+column: 8
+content: for(uinti=0;i<XXX;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 69
+column: 8
+content: for(uinti=0;i<xx.length;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 75
+column: 8
+content: for(uinti=0;i<xx.length;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 81
+column: 8
+content: for(uinti=0;i<local.length;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: k4o1l4
+severity: 1
+line: 14
+column: 8
+content: while(i<address(this).balance){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: k4o1l4
+severity: 1
+line: 29
+column: 8
+content: while(i<xx.length){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: k4o1l4
+severity: 1
+line: 50
+column: 8
+content: while(i<x){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: k4o1l4
+severity: 1
+line: 88
+column: 8
+content: while(i<m.length){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: k4o1l4
+severity: 1
+line: 95
+column: 8
+content: while(i<xx.length){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: k4o1l4
+severity: 1
+line: 101
+column: 8
+content: while(i<y.length){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: k4o1l4
+severity: 1
+line: 108
+column: 8
+content: while(i<y.length){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 69
+column: 8
+content: for(uinti=0;i<xx.length;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 75
+column: 8
+content: for(uinti=0;i<xx.length;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 81
+column: 8
+content: for(uinti=0;i<local.length;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 14
+column: 15
+content: i<address(this).balance
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 29
+column: 15
+content: i<xx.length
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 36
+column: 15
+content: i<y
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 50
+column: 15
+content: i<x
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 88
+column: 15
+content: i<m.length
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 95
+column: 15
+content: i<xx.length
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 101
+column: 15
+content: i<y.length
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 108
+column: 15
+content: i<y.length
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 85
+column: 4
+content: functionparameterMemoryCalldataWhile(uint[]memorym)view{uinti=0;while(i<m.length){}}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 24
+column: 4
+content: uint[]xx=newuint[](100);
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 40
+column: 4
+content: uintx=100;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 60
+column: 4
+content: uintconstantXXX=100;
+
+SOLIDITY_VISIBILITY :4
+SOLIDITY_EXTRA_GAS_IN_LOOPS :13
+SOLIDITY_GAS_LIMIT_IN_LOOPS :11
+
+
+```
+
