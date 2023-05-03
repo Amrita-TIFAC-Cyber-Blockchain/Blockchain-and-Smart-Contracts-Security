@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_REWRITE_ON_ASSEMBLY_CALL
+### Rule Description
+<p>
+    Dangerous use of inline assembly instruction of <code>CALL</code> family, which overwrites the input with the output.
+    In case the arbitrary address is called return value may differ from expected one.
+</p>
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-f34j6k-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -86,3 +92,55 @@ contract MixinSignatureValidator {
     }
 }
 ```
+### Code Result
+
+```
+SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 3
+column: 0
+content: contractMixinSignatureValidator{functionisValidWalletSignature(bytes32hash,addresswalletAddress,bytessignature)internalviewreturns(boolisValid){bytesmemorycalldata=abi.encodeWithSelector(IWallet(walletAddress).isValidSignature.selector,hash,signature);assembly{letcdStart:=add(calldata,32)letsuccess:=staticcall(gas,walletAddress,cdStart,mload(calldata),cdStart,32)switchsuccesscase0{revert(0,100)}case1{isValid:=mload(cdStart)}}returnisValid;}function()payablepublic{addresstarget=logic_contract;assembly{letptr:=mload(0x40)calldatacopy(ptr,0,calldatasize)letresult:=delegatecall(gas,target,ptr,calldatasize,0,0)letsize:=returndatasizereturndatacopy(ptr,0,size)switchresultcase0{revert(ptr,size)}case1{return(ptr,size)}}}}
+
+ruleId: SOLIDITY_SHOULD_NOT_BE_VIEW
+patternId: 189abf
+severity: 1
+line: 5
+column: 4
+content: functionisValidWalletSignature(bytes32hash,addresswalletAddress,bytessignature)internalviewreturns(boolisValid){bytesmemorycalldata=abi.encodeWithSelector(IWallet(walletAddress).isValidSignature.selector,hash,signature);assembly{letcdStart:=add(calldata,32)letsuccess:=staticcall(gas,walletAddress,cdStart,mload(calldata),cdStart,32)switchsuccesscase0{revert(0,100)}case1{isValid:=mload(cdStart)}}returnisValid;}
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 91h3sa
+severity: 1
+line: 45
+column: 24
+content: public
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 8
+column: 8
+content: bytessignature
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 19
+column: 8
+content: assembly{letcdStart:=add(calldata,32)letsuccess:=staticcall(gas,walletAddress,cdStart,mload(calldata),cdStart,32)switchsuccesscase0{revert(0,100)}case1{isValid:=mload(cdStart)}}
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 47
+column: 8
+content: assembly{letptr:=mload(0x40)calldatacopy(ptr,0,calldatasize)letresult:=delegatecall(gas,target,ptr,calldatasize,0,0)letsize:=returndatasizereturndatacopy(ptr,0,size)switchresultcase0{revert(ptr,size)}case1{return(ptr,size)}}
+
+SOLIDITY_LOCKED_MONEY :1
+SOLIDITY_UPGRADE_TO_050 :2
+SOLIDITY_USING_INLINE_ASSEMBLY :2
+SOLIDITY_SHOULD_NOT_BE_VIEW :1
+
+```
+
