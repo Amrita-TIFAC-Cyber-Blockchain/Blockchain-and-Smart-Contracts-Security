@@ -4,6 +4,15 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_ERC20_TRANSFER_SHOULD_THROW
+### Rule Description
+<p>
+Functions of ERC-20 Token Standard should throw in special cases:
+</p>
+<ul>
+    <li><code>transfer</code> should throw if the <code>_from</code> account balance does not have enough tokens to spend</li>
+    <li><code>transferFrom</code> should throw unless the <code>_from</code> account has deliberately authorized the sender of the message via some mechanism</li>
+</ul>
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-550a42-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -58,4 +67,86 @@ contract Token3 is Token2{
 		return super.transfer(_token,_value);
 	}
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE
+patternId: b180ca
+severity: 2
+line: 15
+column: 1
+content: functiontransfer(address_token,uint_value)returns(boolsuccess){ERC20(_token).transfer(msg.sender,_value);}
+
+ruleId: SOLIDITY_ERC20_TRANSFER_SHOULD_THROW
+patternId: 550a42
+severity: 1
+line: 7
+column: 1
+content: functiontransfer(uint256_value)returns(boolsuccess){if(_value>0){returntrue;}else{returnfalse;}}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 15
+column: 1
+content: functiontransfer(address_token,uint_value)returns(boolsuccess){ERC20(_token).transfer(msg.sender,_value);}
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 25
+column: 2
+content: if(_value<20wei){revert();}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 23rt6g
+severity: 1
+line: 3
+column: 60
+content: public
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 7
+column: 1
+content: functiontransfer(uint256_value)returns(boolsuccess){if(_value>0){returntrue;}else{returnfalse;}}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 15
+column: 1
+content: functiontransfer(address_token,uint_value)returns(boolsuccess){ERC20(_token).transfer(msg.sender,_value);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 18
+column: 1
+content: functiontransferFrom(uint_value)returns(boolsuccess){require(_value>10wei);returnfalse;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 24
+column: 1
+content: functiontransferFrom(uint_value)returns(boolsuccess){if(_value<20wei){revert();}returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 30
+column: 1
+content: functiontransfer(address_token,uint_value)returns(boolsuccess){returnsuper.transfer(_token,_value);}
+
+SOLIDITY_VISIBILITY :6
+SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE :1
+SOLIDITY_REVERT_REQUIRE :1
+SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN :1
+SOLIDITY_ERC20_TRANSFER_SHOULD_THROW :1
+
+
 ```
