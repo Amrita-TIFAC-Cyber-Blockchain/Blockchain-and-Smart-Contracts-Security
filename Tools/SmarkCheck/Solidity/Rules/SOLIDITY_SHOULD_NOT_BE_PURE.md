@@ -4,6 +4,11 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_SHOULD_NOT_BE_PURE
+### Rule Description
+<p>In Solidity, function that do not read from the state or modify it can be declared as <code>pure</code>.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-11314f-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -72,4 +77,90 @@ contract Math {
       return c;
     }
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_PRAGMAS_VERSION
+patternId: 23fc32
+severity: 1
+line: 1
+column: 16
+content: ^
+
+ruleId: SOLIDITY_SHOULD_NOT_BE_PURE
+patternId: 11314f
+severity: 1
+line: 6
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){returnmsg.sender.balance;}
+
+ruleId: SOLIDITY_SHOULD_NOT_BE_PURE
+patternId: 11314f
+severity: 1
+line: 10
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){if(f<this.balance)x.send(10);returnt;}
+
+ruleId: SOLIDITY_SHOULD_NOT_BE_PURE
+patternId: 11314f
+severity: 1
+line: 15
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){y=msg.value;o=block.timestamp;returnt;}
+
+ruleId: SOLIDITY_SHOULD_NOT_BE_PURE
+patternId: 11314f
+severity: 1
+line: 21
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){y=msg.value;o=block.timestamp;selfdestruct(f);returnt;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 6
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){returnmsg.sender.balance;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 10
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){if(f<this.balance)x.send(10);returnt;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 15
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){y=msg.value;o=block.timestamp;returnt;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 21
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){y=msg.value;o=block.timestamp;selfdestruct(f);returnt;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 27
+column: 4
+content: functionreturnsenderbalance()purereturns(uint){returnt;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 4
+column: 4
+content: addressf;
+
+SOLIDITY_VISIBILITY :6
+SOLIDITY_PRAGMAS_VERSION :1
+SOLIDITY_SHOULD_NOT_BE_PURE :4
+
 ```
