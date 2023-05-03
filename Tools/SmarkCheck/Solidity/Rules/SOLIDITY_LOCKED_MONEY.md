@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_LOCKED_MONEY
+### Rule Description
+<p>
+    Contracts programmed to receive ether should implement a way to withdraw it, i.e., call <code>transfer</code> (recommended), <code>send</code>, or <code>call.value</code> at least once.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-30281d-gold) ![](https://img.shields.io/badge/Severity-3-brown) 
 
@@ -101,4 +107,189 @@ contract GoodMarketPlace9 {
 library BadMarketPlaceLibrary {
     function foo() {}
 }
+```
+### Code Result
+```
+SOLIDITY_CALL_WITHOUT_DATA
+patternId: om991k
+severity: 2
+line: 48
+column: 10
+content: call.value(amount)()
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 27cb59
+severity: 1
+line: 6
+column: 8
+content: suicide
+
+ruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 38
+column: 0
+content: contractBadMarketPlace1{functiondeposit()payable{}functionfoo(){}}
+
+ruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 53
+column: 0
+content: contractBadMarketPlace2{function()payable{}}
+
+ruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 58
+column: 0
+content: contractBadMarketPlace3{function()payable{}}
+
+ruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 63
+column: 0
+content: contractGoodMarketPlace9{function()payableexternal{}functionfoo(addressa,bytescalldatadata)payableexternal{a.delegatecall(data);}}
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 48
+column: 10
+content: call.value(amount)()
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 66
+column: 10
+content: delegatecall(data)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 48
+column: 10
+content: call.value(amount)()
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 12
+column: 4
+content: functionkill()payable{selfdestruct(msg.sender);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 21
+column: 4
+content: functionsomeComp()payable{if(x.balance<10&&myAddress.balance>=10)x.send(10);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 29
+column: 4
+content: functiondeposit(addressw){w.transfer(9);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 32
+column: 4
+content: functiondeposit1()payable{}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 33
+column: 4
+content: functionfoo(){a=0;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 39
+column: 4
+content: functiondeposit()payable{}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 40
+column: 4
+content: functionfoo(){}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 46
+column: 4
+content: functiondeposit()payable{}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 47
+column: 4
+content: functionfoo(uintamount)payable{s.call.value(amount)();}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 54
+column: 5
+content: function()payable{}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 59
+column: 4
+content: function()payable{}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 72
+column: 4
+content: functionfoo(){}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 19
+column: 4
+content: addressx;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 20
+column: 4
+content: addressmyAddress;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 28
+column: 4
+content: uinta;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 45
+column: 4
+content: addresss;
+
+SOLIDITY_VISIBILITY :16
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :1
+SOLIDITY_LOCKED_MONEY :4
+SOLIDITY_UPGRADE_TO_050 :1
+SOLIDITY_UNCHECKED_CALL :2
+SOLIDITY_CALL_WITHOUT_DATA :1
+
 ```
