@@ -4,6 +4,10 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_FUNCTION_RETURNS_TYPE_AND_NO_RETURN
+### Rule Description
+<p>Function doesn't initialize return value. As result default value will be returned.</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-47acc2-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -98,4 +102,153 @@ contract C {
         return balanceOf(_to);
     }
 }
+```
+### Code Result
+```
+SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 5
+column: 4
+content: functionremainBalanced1()publicconstantreturns(uint256){uinta=1000;}
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 9
+column: 4
+content: functionassemblyTest1()publicconstantreturns(uint256){assembly{mstore(0,100)return(0,32)}}
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 16
+column: 4
+content: functionremainBalanced2()publicconstantreturns(uinta,uint256){a=1000;}
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 42
+column: 4
+content: functionremainBalanced()publicconstantreturns(uint256){returnbalanceOf(this);}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 47acc2
+severity: 1
+line: 5
+column: 4
+content: functionremainBalanced1()publicconstantreturns(uint256){uinta=1000;}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 47acc2
+severity: 1
+line: 9
+column: 4
+content: functionassemblyTest1()publicconstantreturns(uint256){assembly{mstore(0,100)return(0,32)}}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 47acc2
+severity: 1
+line: 16
+column: 4
+content: functionremainBalanced2()publicconstantreturns(uinta,uint256){a=1000;}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 20
+column: 4
+content: functionexecute(address_to,uint_value,bytes_data)returns(uint256_r){if(_to==address(0)){revert();}}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 25
+column: 4
+content: functionassemblyTest2(address_to,uint_value,bytes_data)returns(uint256_r){assembly{_r:=100}}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 31
+column: 4
+content: functionexecute1(address_to,uint_value,bytes_data)returns(uint256_r){_value=_r;}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 35
+column: 4
+content: functionexecute2(address_to,uint_value,bytes_data)returns(boolflag,uint256_r){flag=true;_value=balanceOf(address(_r));}
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 21
+column: 8
+content: if(_to==address(0)){revert();}
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 10
+column: 8
+content: assembly{mstore(0,100)return(0,32)}
+
+ruleId: SOLIDITY_USING_INLINE_ASSEMBLY
+patternId: 109cd5
+severity: 1
+line: 26
+column: 8
+content: assembly{_r:=100}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 20
+column: 4
+content: functionexecute(address_to,uint_value,bytes_data)returns(uint256_r){if(_to==address(0)){revert();}}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 25
+column: 4
+content: functionassemblyTest2(address_to,uint_value,bytes_data)returns(uint256_r){assembly{_r:=100}}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 31
+column: 4
+content: functionexecute1(address_to,uint_value,bytes_data)returns(uint256_r){_value=_r;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 35
+column: 4
+content: functionexecute2(address_to,uint_value,bytes_data)returns(boolflag,uint256_r){flag=true;_value=balanceOf(address(_r));}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 48
+column: 4
+content: functionexecute3(address_to,uint_value,bytes_data)returns(uint256_r){_r=balanceOf(_to);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 52
+column: 4
+content: functionexecute4(address_to,uint_value,bytes_data)returns(uint256_r){returnbalanceOf(_to);}
+
+SOLIDITY_VISIBILITY :6
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :4
+SOLIDITY_REVERT_REQUIRE :1
+SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN :7
+SOLIDITY_USING_INLINE_ASSEMBLY :2
+
 ```
