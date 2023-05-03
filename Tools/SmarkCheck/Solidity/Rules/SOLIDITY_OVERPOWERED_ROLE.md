@@ -4,6 +4,16 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_OVERPOWERED_ROLE
+### Rule Description
+<p>
+    This function is callable only from one address. Therefore, the system depends heavily on this address. In this case, there are scenarios that may lead to undesirable consequences for investors, e.g. if the private key of this address becomes compromised.
+</p>
+<p>
+    Vulnerability type by SmartDec classification: <a href="https://github.com/smartdec/classification#trust">
+    Overpowered owner</a>.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-j83hf7-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -72,3 +82,31 @@ contract MyTreasure {
     }
 }
 ```
+### Code Result
+
+```
+SOLIDITY_OVERPOWERED_ROLE
+patternId: j83hf7
+severity: 2
+line: 12
+column: 4
+content: functionsetPrice(uint_price)publiconlyOwner{price=_price;}
+
+ruleId: SOLIDITY_OVERPOWERED_ROLE
+patternId: j83hf7
+severity: 2
+line: 16
+column: 4
+content: functioninitNewPrice(uint_price)public{require(msg.sender==myAddr);price=_price;}
+
+ruleId: SOLIDITY_OVERPOWERED_ROLE
+patternId: j83hf7
+severity: 2
+line: 21
+column: 4
+content: functionsetNewPrice(uint_price)public{require(myAddr==msg.sender);price=_price;}
+
+SOLIDITY_OVERPOWERED_ROLE :3
+
+```
+
