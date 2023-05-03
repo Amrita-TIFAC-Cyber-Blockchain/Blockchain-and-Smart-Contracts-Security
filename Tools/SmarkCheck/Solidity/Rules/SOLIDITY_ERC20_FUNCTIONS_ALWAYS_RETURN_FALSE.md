@@ -4,6 +4,9 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE
+### Rule Description
+The <code>transfer</code>, <code>transferFrom</code> or <code>approve</code> functions do not return <code>true</code> for any values of input parameters.
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-b180ca-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -65,4 +68,141 @@ contract TestToken3 {
     }
     function approve(address _to, uint256 _value) returns (bool);
  }
+```
+### Code Result
+
+```
+SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 49bd2a
+severity: 1
+line: 6
+column: 26
+content: throw
+
+ruleId: SOLIDITY_ERC20_APPROVE
+patternId: af782c
+severity: 2
+line: 5
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;}
+
+ruleId: SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE
+patternId: b180ca
+severity: 2
+line: 5
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;}
+
+ruleId: SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE
+patternId: b180ca
+severity: 2
+line: 9
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(bool){require(_value>10wei);}
+
+ruleId: SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE
+patternId: b180ca
+severity: 2
+line: 29
+column: 4
+content: functiontransferTokens(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)revert();}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 47acc2
+severity: 1
+line: 9
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(bool){require(_value>10wei);}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 5
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 29
+column: 4
+content: functiontransferTokens(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)revert();}
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 6
+column: 5
+content: if(_value<20wei)throw;
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 26
+column: 5
+content: if(_value<20wei)revert();
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 30
+column: 8
+content: if(_value<20wei)revert();
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 5
+column: 4
+content: functionapprove(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)throw;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 9
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(bool){require(_value>10wei);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 14
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(boolsuccess){require(_value>10wei);success=true;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 21
+column: 4
+content: functiontransferFrom(address_spender,uint_value)returns(bool){require(_value>10wei);returntrue;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 25
+column: 4
+content: functiontransfer(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)revert();returnfalse;}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 29
+column: 4
+content: functiontransferTokens(address_spender,uint_value)returns(boolsuccess){if(_value<20wei)revert();}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 32
+column: 4
+content: functionapprove(address_to,uint256_value)returns(bool);
+
+SOLIDITY_VISIBILITY :7
+SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE :3
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :1
+SOLIDITY_REVERT_REQUIRE :3
+SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN :3
+SOLIDITY_ERC20_APPROVE :1
+
 ```
