@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_UINT_CANT_BE_NEGATIVE
+### Rule Description
+<p>
+    Variables of <code>uint</code> type cannot be negative. Thus, comparing <code>uint</code> variable with zero (greater than or equal) is redundant. Also, it may lead to an underflow issue. Moreover, comparison with zero used in <code>for</code>-loop condition results in an infinite loop.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-11ca45b-gold) ![](https://img.shields.io/badge/Severity-3-brown) 
 
@@ -122,3 +128,146 @@ contract UnderFlow {
     }
 }
 ```
+### Code Result
+
+```
+SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: 11ca45b
+severity: 3
+line: 10
+column: 25
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: 11ca45b
+severity: 3
+line: 48
+column: 14
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: 11ca45b
+severity: 3
+line: 54
+column: 16
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: 11ca45b
+severity: 3
+line: 58
+column: 29
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 10
+column: 25
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 17
+column: 16
+content: a>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 20
+column: 16
+content: b>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 32
+column: 16
+content: str.a1>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 48
+column: 14
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 54
+column: 16
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 58
+column: 29
+content: i>=0
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: 733fdd
+severity: 2
+line: 41
+column: 16
+content: balances[user]>=0
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 30
+column: 19
+content: Mystructstr
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 6
+column: 4
+content: functionfoo_1(){uintb;intc=1;for(uinti=100;i>=0;i--){}for(uintj=0;j<=0;j--){}for(uintk=100;k>=1;k--){}require(a>=0);require(a<=0);require(b>=0);require(b>=7);require(c>=0);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 39
+column: 4
+content: functionfoo_3(addressuser){require(balances[user]>=0);require(ibalances[user]>=0);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 45
+column: 4
+content: functionfoo_4(){uinti;while(i>=0){i--;}do{i--;}while(i>=0);for(uinti=100;i<=0;i++){for(uinti=100;i>=0;i--){}}}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 4
+column: 4
+content: uint8a;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 36
+column: 4
+content: mapping(address=>uint)balances;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 37
+column: 4
+content: mapping(address=>int)ibalances;
+
+SOLIDITY_VISIBILITY :6
+SOLIDITY_UPGRADE_TO_050 :1
+SOLIDITY_UINT_CANT_BE_NEGATIVE :12
+
+
+```
+
