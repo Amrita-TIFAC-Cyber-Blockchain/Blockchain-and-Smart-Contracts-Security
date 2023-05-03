@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_SAFEMATH
+### Rule Description
+<p>
+    <code>SafeMath</code> library is used.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-837cac-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -31,4 +37,19 @@ contract MyToken {
         return(a.sub(b));
     }
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_SAFEMATH
+patternId: 837cac
+severity: 1
+line: 12
+column: 4
+content: usingSafeMathforuint256;
+
+SOLIDITY_SAFEMATH :1
+
+
 ```
