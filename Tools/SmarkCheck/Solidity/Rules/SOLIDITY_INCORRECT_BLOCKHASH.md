@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_INCORRECT_BLOCKHASH
+### Rule Description
+<p>
+    <code>blockhash</code> function returns a non-zero value only for 256 last blocks. Besides, it always returns 0 for the current block, i.e. <code>blockhash(block.number)</code> always equals to 0.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-b629ad-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -49,4 +55,77 @@ contract BlockHash{
         blockhash(block.number-256);
     }
 }
+```
+### Code Result
+
+```
+SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 4
+column: 4
+content: functiongetBlockBlockhash(uint64blockNumber)constantreturns(bytes32blockhash){block.blockhash(100);block.blockhash(block.number);block.blockhash(block.number-257);block.blockhash(block.number-256);}
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 28fa69
+severity: 1
+line: 14
+column: 4
+content: functiongetBlockhash(uint64blockNumber)constantreturns(bytes32blockhash){blockhash(100);blockhash(block.number);blockhash(block.number-257);blockhash(block.number-256);}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 4
+column: 4
+content: functiongetBlockBlockhash(uint64blockNumber)constantreturns(bytes32blockhash){block.blockhash(100);block.blockhash(block.number);block.blockhash(block.number-257);block.blockhash(block.number-256);}
+
+ruleId: SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN
+patternId: 58bdd3
+severity: 1
+line: 14
+column: 4
+content: functiongetBlockhash(uint64blockNumber)constantreturns(bytes32blockhash){blockhash(100);blockhash(block.number);blockhash(block.number-257);blockhash(block.number-256);}
+
+ruleId: SOLIDITY_INCORRECT_BLOCKHASH
+patternId: b629ad
+severity: 2
+line: 6
+column: 24
+content: 100
+
+ruleId: SOLIDITY_INCORRECT_BLOCKHASH
+patternId: b629ad
+severity: 2
+line: 8
+column: 24
+content: block.number
+
+ruleId: SOLIDITY_INCORRECT_BLOCKHASH
+patternId: b629ad
+severity: 2
+line: 10
+column: 24
+content: block.number-257
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 4
+column: 4
+content: functiongetBlockBlockhash(uint64blockNumber)constantreturns(bytes32blockhash){block.blockhash(100);block.blockhash(block.number);block.blockhash(block.number-257);block.blockhash(block.number-256);}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 14
+column: 4
+content: functiongetBlockhash(uint64blockNumber)constantreturns(bytes32blockhash){blockhash(100);blockhash(block.number);blockhash(block.number-257);blockhash(block.number-256);}
+
+SOLIDITY_VISIBILITY :2
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :2
+SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN :2
+SOLIDITY_INCORRECT_BLOCKHASH :3
+
+
 ```
