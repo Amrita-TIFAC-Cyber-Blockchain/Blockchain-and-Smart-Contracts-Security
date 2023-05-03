@@ -4,6 +4,26 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_GAS_LIMIT_IN_LOOPS
+### Rule Description
+<p>
+    Ethereum is a very resource-constrained environment. Prices per computational step are orders of magnitude higher than with centralized providers. Moreover, Ethereum miners impose a limit on the total number of gas consumed in a block. If <code>array.length</code> is large enough, the function exceeds the block gas limit, and transactions calling it will never be confirmed:
+</p>
+<pre><code>
+    for (uint256 i = 0; i < array.length ; i++) {
+        cosltyFunc();
+    }
+</code></pre>
+<p>
+    This becomes a security issue, if an external actor influences <code>array.length</code>.
+    E.g., if array enumerates all registered addresses, an adversary can register many addresses, causing the problem described above.
+</p>
+<p>
+    Vulnerability type by SmartDec classification: <a href="https://github.com/smartdec/classification#gas-limitations">
+    Infinite loops</a>.
+</p>
+
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-f6f853-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -268,4 +288,224 @@ contract GasLimitInLoops {
         }
     }
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 24
+column: 8
+content: for(uinti=0;i<_addr.length;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 39
+column: 8
+content: for(uintk;k<_addr.length;k++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 55
+column: 8
+content: for(uinti=0;i<mem.length;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 70
+column: 8
+content: for(uintk;k<mem.length;k++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 76
+column: 8
+content: for(i=0;i<mem2.length;i++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 91
+column: 8
+content: for(k=0;k<mem2.length;k++){}
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 99
+column: 8
+content: for(k=0;k<stor.length;k++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 24
+column: 8
+content: for(uinti=0;i<_addr.length;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 29
+column: 8
+content: for(i=0;i<n;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 35
+column: 8
+content: for(i=0;i<m;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 39
+column: 8
+content: for(uintk;k<_addr.length;k++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 55
+column: 8
+content: for(uinti=0;i<mem.length;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 60
+column: 8
+content: for(i=0;i<n;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 66
+column: 8
+content: for(i=0;i<m;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 70
+column: 8
+content: for(uintk;k<mem.length;k++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 76
+column: 8
+content: for(i=0;i<mem2.length;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 81
+column: 8
+content: for(i=0;i<n2;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 87
+column: 8
+content: for(i=0;i<m2;i++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 91
+column: 8
+content: for(k=0;k<mem2.length;k++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 99
+column: 8
+content: for(k=0;k<stor.length;k++){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 12cf32
+severity: 2
+line: 43
+column: 8
+content: for(i=_addr.length;i>0;i--){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 12cf32
+severity: 2
+line: 46
+column: 8
+content: for(uintj=_addr.length;j>0;j--){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 12cf32
+severity: 2
+line: 95
+column: 8
+content: for(uintj=stor.length;j>0;j--){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 12cf32
+severity: 2
+line: 103
+column: 8
+content: for(i=mem.length;i>0;i--){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 12cf32
+severity: 2
+line: 107
+column: 8
+content: for(j=mem2.length;j>0;j--){}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 17f23a
+severity: 1
+line: 17
+column: 15
+content: y[5]<x
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: 38f6c7
+severity: 2
+line: 12
+column: 8
+content: while(x<foo()){}
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 341gim
+severity: 1
+line: 21
+column: 21
+content: address[]_addr
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 52
+column: 4
+content: functiontestForMemory(address[]memorymem){for(uinti=0;i<mem.length;i++){}uintn=mem.length;for(i=0;i<n;i++){}uintm;m=mem.length;for(i=0;i<m;i++){}for(uintk;k<mem.length;k++){}address[]memorymem2;for(i=0;i<mem2.length;i++){}uintn2=mem2.length;for(i=0;i<n2;i++){}uintm2;m2=mem2.length;for(i=0;i<m2;i++){}for(k=0;k<mem2.length;k++){}for(uintj=stor.length;j>0;j--){}for(k=0;k<stor.length;k++){}for(i=mem.length;i>0;i--){}for(j=mem2.length;j>0;j--){}}
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 50
+column: 4
+content: address[]stor;
+
+SOLIDITY_VISIBILITY :2
+SOLIDITY_EXTRA_GAS_IN_LOOPS :7
+SOLIDITY_UPGRADE_TO_050 :1
+SOLIDITY_GAS_LIMIT_IN_LOOPS :20
+
 ```
