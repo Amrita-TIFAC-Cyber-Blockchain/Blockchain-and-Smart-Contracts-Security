@@ -4,6 +4,16 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_TX_ORIGIN
+### Rule Description
+<p>
+    <code>tx.origin</code> is used for authorization.
+</p>
+<p>
+    Vulnerability type by SmartDec classification: <a href="https://github.com/smartdec/classification#authorization">
+    Authorization with tx.origin</a>.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-12e802-gold) ![](https://img.shields.io/badge/Severity-2-brown) 
 
@@ -53,4 +63,41 @@ contract Check060 {
         }
     }
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 11
+column: 8
+content: if(msg.sender!=tx.origin){revert();}
+
+ruleId: SOLIDITY_SHOULD_RETURN_STRUCT
+patternId: 83hf3l
+severity: 1
+line: 21
+column: 45
+content: (bool,bool)
+
+ruleId: SOLIDITY_TX_ORIGIN
+patternId: 12e802
+severity: 2
+line: 7
+column: 12
+content: tx.origin
+
+ruleId: SOLIDITY_TX_ORIGIN
+patternId: 12e802
+severity: 2
+line: 16
+column: 16
+content: tx.origin
+
+SOLIDITY_REVERT_REQUIRE :1
+SOLIDITY_SHOULD_RETURN_STRUCT :1
+SOLIDITY_TX_ORIGIN :2
+
 ```
