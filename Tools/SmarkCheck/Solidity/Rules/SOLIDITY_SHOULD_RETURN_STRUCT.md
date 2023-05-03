@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_SHOULD_RETURN_STRUCT
+### Rule Description
+<p>
+Consider using struct instead of multiple return values for <code>internal</code> or <code>private</code> functions. It can improve code readability.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-7d54ca-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
 
@@ -92,4 +98,33 @@ contract C {
         (a, , , ) = f2();
     }
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_SHOULD_RETURN_STRUCT
+patternId: 7d54ca
+severity: 1
+line: 5
+column: 34
+content: (uinta,uintb,uintc,uintd)
+
+ruleId: SOLIDITY_SHOULD_RETURN_STRUCT
+patternId: 7d54ca
+severity: 1
+line: 12
+column: 33
+content: (uinta,uintb,uintc,uintd)
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 26
+column: 4
+content: functionf6()returns(uinta){a=1;}
+
+SOLIDITY_VISIBILITY :1
+SOLIDITY_SHOULD_RETURN_STRUCT :2
+
 ```
