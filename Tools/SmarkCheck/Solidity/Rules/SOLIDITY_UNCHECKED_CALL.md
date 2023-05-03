@@ -4,6 +4,12 @@
 ![](https://img.shields.io/badge/Language-Solidity-blue)
 
 ## SOLIDITY_UNCHECKED_CALL
+### Rule Description
+<p>
+    A function with <code>public</code> visibility modifier that is not called internally. Changing visibility level to <code>external</code> increases code readability. Moreover, in many cases functions with <code>external</code> visibility modifier spend less gas comparing to functions with <code>public</code> visibility modifier.
+</p>
+
+### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-f39eed-gold) ![](https://img.shields.io/badge/Severity-3-brown) 
 
@@ -90,4 +96,156 @@ contract SolidityUncheckedSend {
         require(x);
     }
 }
+```
+
+### Code Result
+
+```
+SOLIDITY_ADDRESS_HARDCODED
+patternId: adc165
+severity: 1
+line: 64
+column: 29
+content: 0x144f7887b6c42982b83A0A33fDDc9a4E9b378CaF
+
+ruleId: SOLIDITY_CALL_WITHOUT_DATA
+patternId: om991k
+severity: 2
+line: 11
+column: 10
+content: call.value(w)()
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 21
+column: 36
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 25
+column: 28
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 32
+column: 31
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 36
+column: 30
+content: sha3
+
+ruleId: SOLIDITY_DEPRECATED_CONSTRUCTIONS
+patternId: 187b5a
+severity: 1
+line: 40
+column: 34
+content: sha3
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 21
+column: 8
+content: if(!_e.delegatecall(bytes4(sha3("setN(uint256)")),_n))revert();
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 25
+column: 8
+content: if(!_e.call(bytes4(sha3("setN(uint256)")),_n))revert();
+
+ruleId: SOLIDITY_REVERT_REQUIRE
+patternId: c56b12
+severity: 1
+line: 29
+column: 8
+content: if(!_e.send(1))revert();
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 11
+column: 10
+content: call.value(w)()
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 13
+column: 10
+content: send(w)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 15
+column: 10
+content: delegatecall(w)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 17
+column: 10
+content: callcode(w)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 60
+column: 16
+content: sendTokens(1)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 64
+column: 73
+content: call("abc")
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 11
+column: 10
+content: call.value(w)()
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 25
+column: 16
+content: call(bytes4(sha3("setN(uint256)")),_n)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 32
+column: 19
+content: call(bytes4(sha3("setN(uint256)")),_n)
+
+ruleId: SOLIDITY_UPGRADE_TO_050
+patternId: 83k1no
+severity: 1
+line: 36
+column: 18
+content: call(bytes4(sha3("setN(uint256)")),_n)
+
+SOLIDITY_DEPRECATED_CONSTRUCTIONS :5
+SOLIDITY_REVERT_REQUIRE :3
+SOLIDITY_ADDRESS_HARDCODED :1
+SOLIDITY_UPGRADE_TO_050 :4
+SOLIDITY_UNCHECKED_CALL :6
+SOLIDITY_CALL_WITHOUT_DATA :1
+
 ```
