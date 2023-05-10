@@ -69,6 +69,11 @@ contract TestToken3 {
     function approve(address _to, uint256 _value) returns (bool);
  }
 ```
+
+### Abstract Syntax Tree 
+
+[Click Here](https://astexplorer.net/#/gist/65609430a00dea52c532b93bcb634f5b/1bc08a00c8138494fa5997e7f8fbc84f2714d80c) to view the AST for the above code. Code generated from AST Explorer using _solidity-parser-antlr-0.4.11_
+
 ### Code Result
 
 ```
