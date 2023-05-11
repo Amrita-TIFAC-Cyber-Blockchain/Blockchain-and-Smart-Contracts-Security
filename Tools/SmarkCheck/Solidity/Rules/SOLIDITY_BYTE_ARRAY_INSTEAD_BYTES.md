@@ -5,7 +5,9 @@
 
 ## SOLIDITY_BYTE_ARRAY_INSTEAD_BYTES
 ### Rule Description
-Lower gas consumption
+<p>
+    Use <code>bytes</code> instead of <code>byte[]</code> for lower gas consumption.
+</p>
 ### Solidity-Rules
 
 ![](https://img.shields.io/badge/Pattern_ID-f13a9f-gold) ![](https://img.shields.io/badge/Severity-1-brown) 
