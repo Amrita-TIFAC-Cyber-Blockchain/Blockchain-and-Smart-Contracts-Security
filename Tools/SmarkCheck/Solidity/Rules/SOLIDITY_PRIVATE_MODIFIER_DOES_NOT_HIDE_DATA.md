@@ -1,7 +1,9 @@
 # Analysis of Smart Contract Security Vulnerabilities and Tools ![](https://img.shields.io/badge/-Live-brightgreen)
 ![](https://img.shields.io/badge/Batch-UG21CYS-lightgreen) ![](https://img.shields.io/badge/Batch-PG21CYS-green) ![](https://img.shields.io/badge/Batch-UG22CYS-lightgreen) ![](https://img.shields.io/badge/Batch-PG21CYS-green) ![](https://img.shields.io/badge/Batch-PhD-darkgreen) ![](https://img.shields.io/badge/-B_RIG-darkgreen)<br/>   ![](https://img.shields.io/badge/BlockchainCourse-21CY712-green)  ![](https://img.shields.io/badge/-M.Tech_Dissertation-blue) ![](https://img.shields.io/badge/Focus-Smart_Contract_Security-yellow) <br/>
 ![](https://img.shields.io/badge/Blockchain-Ethereum-blue)   <br/> 
-![](https://img.shields.io/badge/Language-Solidity-blue)
+![](https://img.shields.io/badge/Language-Solidity-blue)<br/> 
+![](https://img.shields.io/badge/Tool-Silther-blue)
+
 
 ## SOLIDITY_PRIVATE_MODIFIER_DOES_NOT_HIDE_DATA
 ### Rule Description
@@ -58,4 +60,23 @@ content: uintdata2;
 SOLIDITY_VISIBILITY :1
 SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA :1
 
+```
+
+# Analysis of Smart Contract Security Vulnerabilities and Tools ![](https://img.shields.io/badge/-Live-brightgreen)
+![](https://img.shields.io/badge/Batch-UG21CYS-lightgreen) ![](https://img.shields.io/badge/Batch-PG21CYS-green) ![](https://img.shields.io/badge/Batch-UG22CYS-lightgreen) ![](https://img.shields.io/badge/Batch-PG21CYS-green) ![](https://img.shields.io/badge/Batch-PhD-darkgreen) ![](https://img.shields.io/badge/-B_RIG-darkgreen)<br/>   ![](https://img.shields.io/badge/BlockchainCourse-21CY712-green)  ![](https://img.shields.io/badge/-M.Tech_Dissertation-blue) ![](https://img.shields.io/badge/Focus-Smart_Contract_Security-yellow) <br/>
+![](https://img.shields.io/badge/Blockchain-Ethereum-blue)   <br/> 
+![](https://img.shields.io/badge/Language-Solidity-blue)<br/> 
+![](https://img.shields.io/badge/Tool-Silther-blue)
+
+## Silther Result
+```
+INFO:Detectors:
+Pragma version0.4.24 (SOLIDITY_PRIVATE_MODIFIER_DOES_NOT_HIDE_DATA.sol#1) allows old versions
+solc-0.4.24 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+INFO:Detectors:
+MarketPlace.data1 (SOLIDITY_PRIVATE_MODIFIER_DOES_NOT_HIDE_DATA.sol#5) should be constant
+MarketPlace.data2 (SOLIDITY_PRIVATE_MODIFIER_DOES_NOT_HIDE_DATA.sol#7) should be constant
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+INFO:Slither:SOLIDITY_PRIVATE_MODIFIER_DOES_NOT_HIDE_DATA.sol analyzed (1 contracts with 85 detectors), 4 result(s) found
 ```
