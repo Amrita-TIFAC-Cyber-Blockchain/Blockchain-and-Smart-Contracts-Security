@@ -1,7 +1,8 @@
 # Analysis of Smart Contract Security Vulnerabilities and Tools ![](https://img.shields.io/badge/-Live-brightgreen)
 ![](https://img.shields.io/badge/Batch-UG21CYS-lightgreen) ![](https://img.shields.io/badge/Batch-PG21CYS-green) ![](https://img.shields.io/badge/Batch-UG22CYS-lightgreen) ![](https://img.shields.io/badge/Batch-PG21CYS-green) ![](https://img.shields.io/badge/Batch-PhD-darkgreen) ![](https://img.shields.io/badge/-B_RIG-darkgreen)<br/>   ![](https://img.shields.io/badge/BlockchainCourse-21CY712-green)  ![](https://img.shields.io/badge/-M.Tech_Dissertation-blue) ![](https://img.shields.io/badge/Focus-Smart_Contract_Security-yellow) <br/>
 ![](https://img.shields.io/badge/Blockchain-Ethereum-blue)   <br/> 
-![](https://img.shields.io/badge/Language-Solidity-blue)
+![](https://img.shields.io/badge/Language-Solidity-blue)<br/> 
+![](https://img.shields.io/badge/Tool-Silther-blue)
 
 ## SOLIDITY_PRAGMAS_VERSION
 ### Rule Description
@@ -54,3 +55,21 @@ SOLIDITY_PRAGMAS_VERSION :1
 
 ```
 
+## Silther Result
+
+```
+INFO:SlitherSolcParsing:No contract were found in None, check the correct compilation
+INFO:Detectors:
+Different versions of Solidity are used:
+        - Version used: ['0.4.24', '^0.4.21']
+        - 0.4.24 (SOLIDITY_PRAGMAS_VERSION.sol#4-5)
+        - ^0.4.21 (SOLIDITY_PRAGMAS_VERSION.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#different-pragma-directives-are-used
+INFO:Detectors:
+Pragma version^0.4.21 (SOLIDITY_PRAGMAS_VERSION.sol#2) allows old versions
+Pragma version0.4.24 (SOLIDITY_PRAGMAS_VERSION.sol#4-5) allows old versions
+solc-0.4.24 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+WARNING:Slither:No contract was analyzed
+INFO:Slither:SOLIDITY_PRAGMAS_VERSION.sol analyzed (0 contracts with 85 detectors), 4 result(s) found
+```
