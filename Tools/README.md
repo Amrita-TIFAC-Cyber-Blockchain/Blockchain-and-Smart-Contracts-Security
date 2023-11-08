@@ -41,6 +41,9 @@
 | Halmos | | Symbolic Execution | | | 
 | Pyrometer | | Symbolic Execution | | | 
 | solstat | | Static Analyser |  | | 
+| HFCCT | CLI | Symbolic Execution | | ![](https://img.shields.io/badge/-Fabric-brown) |
+| Harvey |     | Fuzzer | |  ![](https://img.shields.io/badge/-Ethereum-gold) |
+| reviveCC |   | | SA | ![](https://img.shields.io/badge/-Fabric-brown) |
 
 ### Patching
 
