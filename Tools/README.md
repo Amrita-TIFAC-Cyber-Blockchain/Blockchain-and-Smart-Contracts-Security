@@ -64,3 +64,4 @@
 | SmartBugs |  | ConFuzzius, Conkas, Ethainter, eThor, HoneyBadger, <br/> MadMax, Maian, Manticore, Mythril, Osiris <br/> Oyente, Pakala, Securify, sFuzz, Slither, <br/> Smartcheck, Solhint, teEther, Vandal | | [SmartBugs](https://github.com/ramagururadhakrishnan/smartbugs) |
 | Vulpedia |  | Slither, Smartcheck, Oyente | |  | 
 
+Updated on: Jan 2023 
