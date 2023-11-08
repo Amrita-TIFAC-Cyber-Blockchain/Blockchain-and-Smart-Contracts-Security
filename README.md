@@ -47,7 +47,8 @@ To understand, explore and detect Vulnerabilities in Smart Contracts
 - _Sreelakshmi G_ (SG) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
 - _Sreelakshmi TV_ (STV) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 20CY712)
 - _Pothuri Lakshmi Harika_ (PLH) guided by Ramaguru R (part of M.Tech - Blockchain Technology Course: 21CY712 and M.Tech Dissertation)
-- _Ruthwik Krishna Bandreddy_ (RKB) part of B-RIG
+- _Ruthwik Krishna Bandreddy_ (RKB), _Vinayak R (VR)_, _Yaswanth Gademsetti (YG)_, _A S Deepan (ASD)_ part of B-RIG Sept 2023.
+- _Adithya N S (ANS)_, _Anaswara Suresh M K (ASMK)_, _C S Amritha (CSA)_, _Joshua Anto A (JAA)_, _Shree Harini T (SHT)_ part of B-RIG from Oct 2023. 
 - Ramaguru Radhakrishnan (RG) for Ph.D
 
 ## Dissertations
